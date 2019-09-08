@@ -17,3 +17,21 @@ var firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+
+var dataBase = firebase.database();
+
+    // Initial Values
+    var name = "test name";
+    var email = "test@test.com";
+    var age = 0;
+    var comment = "test comment";
+      
+    // Code test for the push
+      dataBase.ref().push({
+
+        name: name,
+        email: email,
+        age: age,
+        comment: comment,
+        dateAdded: firebase.database.ServerValue.TIMESTAMP
+      });
