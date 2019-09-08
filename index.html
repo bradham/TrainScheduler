@@ -12,79 +12,87 @@
 </head>
 
 <body>
-    <div class="jumbotron">
-        <p>Anytime Is Train Time</p>
-        <p>Train Scheduler</p>
-    </div>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Anytime Is Train Time</h1>
+            <p>Train Scheduler</p>
+        </div>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <br>
-
-
-    <div class="col-lg-6">
-        <div class="card">
-            <div class="card-header">
-                New Train Schedule
+        <div class="col">
+            <div class="card">
+                <div class="card-header">
+                    Current Train Schedule:
+                </div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Train Name</th>
+                            <th scope="col">Destination</th>
+                            <th scope="col">Frequency (minutes)</th>
+                            <th scope="col">Next Arrival</th>
+                            <th scope="col">Minutes Away</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Amtrak Express</th>
+                            <td>Murfreesboro</td>
+                            <td>10</td>
+                            <td>phTime</td>
+                            <td>5*</td>
+                        </tr>
+<!--                         <tr>
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                            <td>@twitter</td>
+                        </tr>
+ -->                    </tbody>
+                </table>
             </div>
+        </div>
 
-            <div class="card-body">
+        <br>
 
-                <!-- Sign-up Form (note the various input "types")-->
-                <form role="form">
-                    <div class="form-group row">
-                        <label for="name-input">Train Name:</label>
-                        <input class="form-control" id="name-input" type="text">
-                    </div>
-                    <div class="form-group row">
-                        <label for="email-input">Destination:</label>
-                        <input class="form-control" id="email-input" type="email">
-                    </div>
-                    <div class="form-group row">
-                        <label for="age-input">First Train Time ():</label>
-                        <input class="form-control" id="age-input" type="number">
-                    </div>
-                    <div class="form-group row">
-                        <label for="comment-input">Frequency (minutes):</label>
-                        <textarea class="form-control" id="comment-input" rows="5"></textarea>
-                    </div>
-                    <button class="btn btn-success" id="add-train" type="submit">Submit</button>
-                </form>
+        <div class="col">
+            <div class="card">
+                <div class="card-header">
+                    Add New Train Schedule:
+                </div>
 
+                <div class="card-body">
+
+                    <!-- Sign-up Form (note the various input "types")-->
+                    <form role="form">
+                        <div class="form-group row">
+                            <label for="name-input">Train Name:</label>
+                            <input class="form-control" id="name-input" type="text">
+                        </div>
+                        <div class="form-group row">
+                            <label for="email-input">Destination:</label>
+                            <input class="form-control" id="email-input" type="email">
+                        </div>
+                        <div class="form-group row">
+                            <label for="age-input">First Train Time ():</label>
+                            <input class="form-control" id="age-input" type="number">
+                        </div>
+                        <div class="form-group row">
+                            <label for="comment-input">Frequency (minutes):</label>
+                            <textarea class="form-control" id="comment-input" rows="5"></textarea>
+                        </div>
+                        <button class="btn btn-success" id="add-train" type="submit">Submit</button>
+                    </form>
+
+                </div>
             </div>
         </div>
     </div>
-
-
 
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
