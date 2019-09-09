@@ -51,13 +51,14 @@ $("#add-train").on("click", function (event) {
     dataBase.ref().on("child_added", function(childSnapshot) {
 
         // Log everything that's coming out of snapshot
-        console.log(childSnapshot.val().name);
-        console.log(childSnapshot.val().dest);
+        console.log("Train name: " + childSnapshot.val().name);
+        console.log("Destination: " + childSnapshot.val().dest);
         console.log(childSnapshot.val().firstTime);
         console.log(childSnapshot.val().freq);
         console.log(childSnapshot.val().dateAdded);
   
-        // full list of items to the well
+        // Add a row to the table
+        $("#trains tr:last").after("<tr><td>" + childSnapshot.val().name + "</td></tr>");
         // $("#full-member-list").append("<div class='well'><span class='member-name'> " +
         //   childSnapshot.val().name +
         //   " </span><span class='member-email'> " + childSnapshot.val().email +
