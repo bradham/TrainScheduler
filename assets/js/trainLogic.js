@@ -21,10 +21,10 @@ firebase.initializeApp(firebaseConfig);
 var dataBase = firebase.database();
 
 // Initial Values
-var name = "test2 name";
-var email = "test2@test.com";
-var age = 2;
-var comment = "test2 comment";
+var trainName = "train name";
+var destination = "place";
+var firstTrainTime = 1300;
+var frequency = 1;
 
 
 // Capture Button Click
@@ -32,17 +32,17 @@ $("#add-train").on("click", function (event) {
     event.preventDefault();
 
     //Get new train data from input values
-    name = $("#name-input").val().trim();
-    email = $("#email-input").val().trim();
-    age = $("#age-input").val().trim();
-    comment = $("#comment-input").val().trim();
+    trainName = $("#name-input").val().trim();
+    destination = $("#destination-input").val().trim();
+    firstTrainTime = $("#first-time-input").val().trim();
+    frequency = $("#frequency-input").val().trim();
     // Code test for the push
     dataBase.ref().push({
 
-        name: name,
-        email: email,
-        age: age,
-        comment: comment,
+        name: trainName,
+        dest: destination,
+        firstTime: firstTrainTime,
+        freq: frequency,
         dateAdded: firebase.database.ServerValue.TIMESTAMP
     });
 });
