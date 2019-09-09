@@ -58,7 +58,11 @@ $("#add-train").on("click", function (event) {
         console.log(childSnapshot.val().dateAdded);
   
         // Add a row to the table
-        $("#trains tr:last").after("<tr><td>" + childSnapshot.val().name + "</td></tr>");
+        var data = "<td>" + childSnapshot.val().name + "</td>";
+        data+= "<td>" + childSnapshot.val().dest + "</td>";
+        data+= "<td>" + childSnapshot.val().freq + "</td>";
+        console.log("data? " + data);
+        $("#trains tr:last").after("<tr>" + data + "</tr>");
         // $("#full-member-list").append("<div class='well'><span class='member-name'> " +
         //   childSnapshot.val().name +
         //   " </span><span class='member-email'> " + childSnapshot.val().email +
