@@ -26,7 +26,6 @@ var destination = "place";
 var firstTrainTime = 1300;
 var frequency = 1;
 
-
 // Capture Button Click
 $("#add-train").on("click", function (event) {
     event.preventDefault();
@@ -36,6 +35,8 @@ $("#add-train").on("click", function (event) {
     destination = $("#destination-input").val().trim();
     firstTrainTime = $("#first-time-input").val().trim();
     frequency = $("#frequency-input").val().trim();
+
+
     // Code test for the push
     dataBase.ref().push({
 
@@ -53,15 +54,24 @@ $("#add-train").on("click", function (event) {
         // Log everything that's coming out of snapshot
         console.log("Train name: " + childSnapshot.val().name);
         console.log("Destination: " + childSnapshot.val().dest);
-        console.log(childSnapshot.val().firstTime);
-        console.log(childSnapshot.val().freq);
-        console.log(childSnapshot.val().dateAdded);
+        console.log("First time: " + childSnapshot.val().firstTime);
+        console.log("Frequency: " + childSnapshot.val().freq);
+        console.log("Date added: " + childSnapshot.val().dateAdded);
+
+        //calculate next arrival time and minutes away
+        var nextArrival = calcArrival(300, 5);
+        var minAway = calcMinutes(nextArrival);
+    
   
         // Add a row to the table
         var data = "<td>" + childSnapshot.val().name + "</td>";
-        data+= "<td>" + childSnapshot.val().dest + "</td>";
-        data+= "<td>" + childSnapshot.val().freq + "</td>";
-        console.log("data? " + data);
+            data+= "<td>" + childSnapshot.val().dest + "</td>";
+            data+= "<td>" + childSnapshot.val().freq + "</td>";
+            data+= "<td>" + nextArrival + "</td>";
+            data+= "<td>" + minAway + "</td>";
+
+        //DEBUG LOG
+        //console.log("data? " + data);
         $("#trains tr:last").after("<tr>" + data + "</tr>");
         // $("#full-member-list").append("<div class='well'><span class='member-name'> " +
         //   childSnapshot.val().name +
@@ -83,4 +93,14 @@ $("#add-train").on("click", function (event) {
         $("#comment-display").text(snapshot.val().comment);
       });
  */  
+
+ function calcArrival(time, freq) {
+     //calculate arrival time. return formatted time
+     return "2:00 PM";
+ };
+
+ function calcMinutes(time) {
+     //calculate minutes away from current time and return number of minutes
+     return 3;
+ };
 
